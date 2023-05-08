@@ -1,13 +1,7 @@
 import React, { useEffect } from 'react';
 import Footer from './Footer';
 import Header from './Header';
-import styled from 'styled-components';
 
-
-
-const Wrapper = styled.div`
-  
-`;
 
 
 
@@ -26,11 +20,11 @@ const Layout: React.FC<LayoutProps> = ({bgColor,children, noHeader, noFooter,  o
 
 
    return (
-       <Wrapper className={` ${noHeader ? 'no-header' : ''} ${overflow?'overflow':'no-overflow'}`} {...additionalProps}>
+       <div className={` ${noHeader ? 'no-header' : ''} ${overflow?'overflow':'no-overflow'}`} {...additionalProps}>
            {noHeader || <Header/>}
            {children}
            {noFooter || <Footer />}
-       </Wrapper>
+       </div>
    );
 }
 
