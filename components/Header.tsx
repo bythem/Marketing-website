@@ -45,15 +45,15 @@ const Header: React.FC<LayoutProps> = ({bgColor,children, noHeader, noFooter,  o
           <Link href="/" className="block py-2 pl-3 pr-4 text-gold hover:text-themeblue rounded md:p-0 font-bold" >About</Link>
         </li>
         <li>
-          <Link href="/" className="block py-2 pl-3 pr-4 text-gold hover:text-themeblue rounded md:p-0 font-bold" >Services</Link>
+          <Link href="/services" className="block py-2 pl-3 pr-4 text-gold hover:text-themeblue rounded md:p-0 font-bold" >Services</Link>
         </li>
        
       </ul>
     </div>
     <div className='hidden md:block'>
-      <button className='font-bold tracking-wider bg-themeblue text-white px-4 hover:bg-themeblue/95 p-2'>
+      <a className='cursor-pointer font-bold tracking-wider bg-themeblue text-white px-4 hover:bg-themeblue/95 p-2'>
          Contact us
-      </button>
+      </a>
     </div>
   </div>
 </nav>
