@@ -25,7 +25,7 @@ export default function Home() {
             Our Services
           </div>
           <h2 className="mb-12 text-themeblue lg:text-5xl tracking-wide text-3xl font-bold lg:max-w-5xl text-left  tracking-tighter">
-          From proof of concepts and to complex systems of an enterprise-level – we’ve got everything covered.
+          From proof of concepts and to complex systems of an enterprise level &mdash; we&apos;ve got everything covered.
           </h2>
           </div>
         </div>
