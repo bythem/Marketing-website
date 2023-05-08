@@ -94,7 +94,7 @@ const ServicesIntro: React.FC<LayoutProps> = ({}) => {
                   <p className="text-base font-light text-themeblue">{item.shortDescription}</p>
                  
                 </div>
-                <a href="/services" className="mt-4 block text-gold hover:text-themeblue font-bold">Learn More</a>
+                <Link href="/services" className="mt-4 block text-gold hover:text-themeblue font-bold">Learn More</Link>
               </div>
             );
          })
