@@ -39,7 +39,7 @@ export default function Home() {
                 <div className={`${i%2===0 ?'lg:order-first':'lg:order-last'} col-span-12 lg:col-span-6 flex align-items-center`}>
                   <img
                     alt=""
-                    className="max-h-64 mb-6 m-auto"
+                    className="max-h-64 m-auto"
                     src={item.image}
                   ></img>
                 </div>
