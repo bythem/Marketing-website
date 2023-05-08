@@ -51,9 +51,9 @@ const Header: React.FC<LayoutProps> = ({bgColor,children, noHeader, noFooter,  o
       </ul>
     </div>
     <div className='hidden md:block'>
-      <a className='cursor-pointer font-bold tracking-wider bg-themeblue text-white px-4 hover:bg-themeblue/95 p-2'>
+      <Link href="/contact" className='cursor-pointer font-bold tracking-wider bg-themeblue text-white px-4 hover:bg-themeblue/95 p-2'>
          Contact us
-      </a>
+      </Link>
     </div>
   </div>
 </nav>
