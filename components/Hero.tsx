@@ -14,9 +14,14 @@ type LayoutProps = {
         <h1 className='text-themeblue md:text-7xl text-2xl font-extrabold my-6'>Let&apos;s Empower your Next Generation 
         Digital <span className='text-gold'>Product </span>
          and <span className='text-gold'>Workforce </span> Together </h1>
-        <button className='bg-themeblue text-white md:px-8 md:py-6 md:my-12 my-4 px-3 py-4 hover:bg-themeblue/95  md:text-lg text-sm'>
+        <div className=' w-full'>
+        <button className='mx-auto items-center gap-4 flex flex-row bg-themeblue text-white md:px-8 md:my-12 my-4 px-3 py-4 hover:bg-themeblue/95  md:text-lg text-sm'>
         Schedule a consultation 
+        <span className=''>
+          <img src='/static/assets/rightarrow.svg'/>
+        </span>
       </button>
+        </div>
     </div>
  
     );

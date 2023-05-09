@@ -27,7 +27,7 @@ const Header: React.FC<LayoutProps> = ({bgColor,children, noHeader, noFooter,  o
    //    </div>
    //   </div>
      
-<nav className="bg-white">
+<nav className="bg-white border-b border-neutral-100 sticky top-0">
   <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center flex-row p-4 ">
     <Link href="/" className="flex items-center">
         <img src="/static/assets/boodh.svg" className=" mr-3" alt="Boodh" />
@@ -51,8 +51,11 @@ const Header: React.FC<LayoutProps> = ({bgColor,children, noHeader, noFooter,  o
       </ul>
     </div>
     <div className='hidden md:block'>
-      <Link href="/contact" className='cursor-pointer font-bold tracking-wider bg-themeblue text-white px-4 hover:bg-themeblue/95 p-2'>
+      <Link href="/contact" className='mx-auto items-center gap-4 flex flex-row cursor-pointer font-bold tracking-wider bg-themeblue text-white px-4 hover:bg-themeblue/95 p-2'>
          Contact us
+         <span className=''>
+          <img src='/static/assets/rightarrow.svg'/>
+        </span>
       </Link>
     </div>
   </div>

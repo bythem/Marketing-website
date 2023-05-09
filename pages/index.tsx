@@ -11,11 +11,11 @@ export default function Home() {
     <Layout>
       <Head>
         <title>Boodh | Digital product and workforce </title>
-        <meta name="description" content="Let’s Empower Your Next Generation Digital Product and Workforce Together" />
+        <meta name="description" content="Leading platform for your product and workforce together." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main className=''>
       <Hero></Hero>
       <ServicesIntro></ServicesIntro>
       </main>

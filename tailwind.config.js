@@ -9,6 +9,10 @@ module.exports = {
     
     
     extend: {
+      fontFamily: {
+        'press-start': ['"Press Start 2P"', 'cursive'],
+        'montserrat':['Montserrat','sans-serif']
+      },
       colors:{
         'gold':'#D1AA68',
          'themeblue':'#33537D',
