@@ -40,6 +40,7 @@ const Layout: React.FC<LayoutProps> = ({
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Raleway:wght@400;500&display=swap"
           rel="stylesheet"
         />
+        
       </Head>
       <div className="font-montserrat">
         {noHeader || <Header />}

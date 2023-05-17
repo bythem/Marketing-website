@@ -29,11 +29,11 @@ const Footer: React.FC<LayoutProps> = ({
                 Leading platform for your product and workforce together.
               </p>
             </div>
-            <div className="col-span-3 text-white">
-              <h4 className="font-bold text-xl mb-8">Quick links</h4>
+            <div className="col-span-12 md:col-span-3 text-white">
+              <h4 className="font-bold text-xl mb-2 md:mb-8">Quick links</h4>
               <ul>
                 <li className="text-neutral-300 hover:text-gold my-3">
-                  <Link href={"/services"}>Company</Link>
+                  <Link href={"/services"}>Services</Link>
                 </li>
                 <li className="text-neutral-300 hover:text-gold my-3">
                   <Link href={"/about"}>About</Link>
