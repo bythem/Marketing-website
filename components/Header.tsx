@@ -41,9 +41,9 @@ const Header: React.FC<LayoutProps> = ({bgColor,children, noHeader, noFooter,  o
         <li>
           <Link href="/" className="block py-2 pl-3 pr-4 text-gold hover:text-themeblue rounded md:p-0 font-bold " >Home</Link>
         </li>
-        <li>
+        {/* <li>
           <Link href="/" className="block py-2 pl-3 pr-4 text-gold hover:text-themeblue rounded md:p-0 font-bold" >About</Link>
-        </li>
+        </li> */}
         <li>
           <Link href="/services" className="block py-2 pl-3 pr-4 text-gold hover:text-themeblue rounded md:p-0 font-bold" >Services</Link>
         </li>

@@ -3,11 +3,45 @@ import Image from "next/image";
 import Layout from "@/components/Layout";
 import { useState } from "react";
 
+
 export default function Contact() {
   const[formData,setFormData] = useState({});
-  const submitForm =()=>{
-
+  const[error,setError]= useState("");
+  const submitForm =async ()=>{
+    
+    if(formData.email !=="" && formData.name !=="" && formData.info  !=="")
+    {
+      if(!validateEmail(formData.email)){
+        setError("Enter valid email");
+      }else{
+        try {
+          await fetch("/api/contact", {
+            "method": "POST",
+            "headers": { "content-type": "application/json" },
+            "body": JSON.stringify(formData)
+          })
+    
+                //if sucess do whatever you like, i.e toast notification
+          
+        } catch (error) {
+            // toast error message. whatever you wish 
+        }
+      }
+      
+    }
+    else{
+      setError("All fields are required");
+    }
+   
   }
+
+  const validateEmail = (email:string) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
   return (
     <Layout>
       <Head>
@@ -45,45 +79,60 @@ export default function Contact() {
 
           <div className="my-12 max-w-sm px-4 rounded-xl">
             <div className="relative my-8">
+              <label
+                htmlFor="email"
+                className="block mb-2 text-sm font-medium text-gray-900 "
+              >
+                Email
+              </label>
               <input
-                type="text"
                 onChange={(e) => {
                   setFormData({ ...formData, email: e.target.value });
                 }}
-                className="peer block min-h-[auto] w-full rounded border-b bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                placeholder="Email"
+                type="email"
+                id="email"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                required
               />
-              <label className="text-themeblue pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none ">
-                Email
-              </label>
             </div>
             <div className="relative my-8">
+              <label
+                htmlFor="name"
+                className="block mb-2 text-sm font-medium text-gray-900 "
+              >
+                Name
+              </label>
               <input
-                type="text"
                 onChange={(e) => {
                   setFormData({ ...formData, name: e.target.value });
                 }}
-                className="peer block min-h-[auto] w-full rounded border-b bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                placeholder="Name"
+                type="text"
+                id="name"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                required
               />
-              <label className="text-themeblue pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none ">
-                Name
-              </label>
             </div>
             <div className="relative my-8">
+              <label
+                htmlFor="info"
+                className="block mb-2 text-sm font-medium text-gray-900 "
+              >
+                Additional information
+              </label>
               <textarea
                 onChange={(e) => {
                   setFormData({ ...formData, info: e.target.value });
                 }}
-                className="peer block min-h-[auto] w-full rounded border-b bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                placeholder="Name"
+                id="info"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                required
               />
-              <label className="text-themeblue pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none ">
-                Additional information
-              </label>
             </div>
             <div className="mb-6">
-              <button onClick={submitForm} className="items-center gap-4 flex flex-row cursor-pointer font-bold tracking-wider bg-themeblue text-white px-4 hover:bg-themeblue/95 p-2">
+              <button
+                onClick={submitForm}
+                className="items-center gap-4 flex flex-row cursor-pointer font-bold tracking-wider bg-themeblue text-white px-4 hover:bg-themeblue/95 p-2"
+              >
                 Submit
                 <span className="">
                   <img src="/static/assets/rightarrow.svg" />
