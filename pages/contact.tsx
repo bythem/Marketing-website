@@ -3,9 +3,18 @@ import Image from "next/image";
 import Layout from "@/components/Layout";
 import { useState } from "react";
 
+type form= {
+  email:string;
+  name:string;
+  info:string;
+}
 
 export default function Contact() {
-  const[formData,setFormData] = useState({});
+  const[formData,setFormData] = useState<form>({
+    email:"",
+    name:"",
+    info:""
+  });
   const[error,setError]= useState("");
   const submitForm =async ()=>{
     
