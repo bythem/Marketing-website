@@ -35,9 +35,9 @@ const Footer: React.FC<LayoutProps> = ({
                 <li className="text-neutral-300 hover:text-gold my-3">
                   <Link href={"/services"}>Services</Link>
                 </li>
-                <li className="text-neutral-300 hover:text-gold my-3">
+                {/* <li className="text-neutral-300 hover:text-gold my-3">
                   <Link href={"/about"}>About</Link>
-                </li>
+                </li> */}
                 <li className="text-neutral-300 hover:text-gold my-3">
                   <Link href={"/contact"}>Contact us</Link>
                 </li>
