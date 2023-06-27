@@ -38,12 +38,26 @@ const Footer: React.FC<LayoutProps> = ({
                 {/* <li className="text-neutral-300 hover:text-gold my-3">
                   <Link href={"/about"}>About</Link>
                 </li> */}
+                
+              </ul>
+            </div>
+            <div className="col-span-12 md:col-span-4">
+            <h4 className="font-bold text-xl text-white mb-2 md:mb-8">Contact us</h4>
+              <ul>
                 <li className="text-neutral-300 hover:text-gold my-3">
-                  <Link href={"/contact"}>Contact us</Link>
+                  1 Mid America Plaza, 3rd Floor, Oakbrook Terrace, IL - 60181
+                </li>
+                {/* <li className="text-neutral-300 hover:text-gold my-3">
+                  <Link href={"/about"}>About</Link>
+                </li> */}
+                <li className="text-neutral-300 hover:text-gold my-3">
+                  Email: <Link href={"mailto:pan.rah@boodh.org"}>pan.rah@boodh.org</Link>
+                </li>
+                <li className="text-neutral-300 hover:text-gold my-3">
+                  Phone: <Link href={"tel:+13129727733"}>+13129727733</Link>
                 </li>
               </ul>
             </div>
-            <div className="col-span-4"></div>
           </div>
         </div>
       </div>
